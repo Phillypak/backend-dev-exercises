@@ -22,9 +22,9 @@ dbcursor.execute("""CREATE TABLE IF NOT EXISTS Records(
 db.commit()
 
 # select all items and insert them into the new databse
-for item in cursor.execute("""select r.id, r.age, w.name, e.name, m.name, o.name, rs.name, 
+for item in cursor.execute("""SELECT r.id, r.age, w.name, e.name, m.name, o.name, rs.name, 
                                 rc.name, s.name, r.capital_gain, r.capital_loss, r.hours_week, c.name, r.over_50k
-                                from records r, workclasses w, education_levels e, 
+                                FROM records r, workclasses w, education_levels e, 
                                     marital_statuses m, occupations o, races rc, relationships rs, 
                                     sexes s, countries c
                                 where w.id=r.workclass_id
